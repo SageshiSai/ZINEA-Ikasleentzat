@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/zinema.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <header>
+        <h1>HERRIKO ANTZOKIA </h1>
+        <H2>CARTELERA PROXIMA SESION</H2>
+    </header>
+    <div id="cartelera">
+        <div class="imagen">
+            <p>SALA 1</p>
+            <a href="#" id="1">
+                <img class="pelis" id="sal1" onclick="verDatos(1)" alt="" />
+            </a>
+        </div>
+        <div class="imagen">
+            <p>SALA 2</p>
+            <a href="#" id="2">
+                <img class="pelis" id="sal2" onclick="verDatos(2)" alt="" />
+            </a>
+        </div>
+        <div class="imagen">
+            <p>SALA 3</p>
+            <a href="#" id="3">
+                <img class="pelis" id="sal3" onclick="verDatos(3)" alt="" />
+            </a>
+        </div>
+        <div class="imagen">
+            <p>SALA 4</p>
+            <a href="#" id="4">
+                <img class="pelis" id="sal4" onclick="verDatos(4)" alt="" />
+            </a>
+        </div>
+    </div>
+
+    <div id="elementos">
+        <div id="sala1" class="texto">
+            <h3>MECHANIC:RESURRECTION</h3>
+            <p> Maecenas vitae eros nisi. Maecenas ipsum erat, auctor sed libero vitae, pulvinar porttitor leo. Aenean
+                mattis sem sit amet tortor tincidunt cursus. Vivamus egestas cursus ipsum, sed tristique magna fermentum
+                in. Pellentesque ac pretium ex. Phasellus convallis ante urna, sed laoreet lacus imperdiet a. Nulla ac
+                nibh faucibus, tincidunt turpis vel, pretium elit.</p>
+        </div>
+
+        <div id="sala2" class="texto">
+            <h3>UN MONSTRUO VIENE A VERME</h3>
+            <p> Maecenas vitae eros nisi. Maecenas ipsum erat, auctor sed libero vitae, pulvinar porttitor leo. Aenean
+                mattis sem sit amet tortor tincidunt cursus. Vivamus egestas cursus ipsum, sed tristique magna fermentum
+                in.
+                Pellentesque ac pretium ex. Phasellus convallis ante urna, sed laoreet lacus imperdiet a. Nulla ac nibh
+                faucibus, tincidunt turpis vel, pretium elit.</p>
+        </div>
+
+
+        <div id="sala3" class="texto">
+            <h3>EL HOGAR DE MISS PEREGRINE PARA NIÑOS PECULIARES</h3>
+            <p> Maecenas vitae eros nisi. Maecenas ipsum erat, auctor sed libero vitae, pulvinar porttitor leo. Aenean
+                mattis sem sit amet tortor tincidunt cursus. Vivamus egestas cursus ipsum, sed tristique magna fermentum
+                in.
+                Pellentesque ac pretium ex. Phasellus convallis ante urna, sed laoreet lacus imperdiet a. Nulla ac nibh
+                faucibus, tincidunt turpis vel, pretium elit.</p>
+        </div>
+
+        <div id="sala4" class="texto">
+            <h3>OZZY</h3>
+            <p> Maecenas vitae eros nisi. Maecenas ipsum erat, auctor sed libero vitae, pulvinar porttitor leo. Aenean
+                mattis sem sit amet tortor tincidunt cursus. Vivamus egestas cursus ipsum, sed tristique magna fermentum
+                in.
+                Pellentesque ac pretium ex. Phasellus convallis ante urna, sed laoreet lacus imperdiet a. Nulla ac nibh
+                faucibus, tincidunt turpis vel, pretium elit.</p>
+        </div>
+    </div>
+
+    <div id="compraentradas">
+        <h2 id="salacompra"></h2>  
+        <div>
+            <form id="formucompra">
+                <fieldset>
+                    <legend>COMPRA DE ENTRADAS PARA LA SESION</legend>
+                    <label for="numentradas">NUMERO DE ENTRADAS</label> 
+                    <input id="numeroent" name="numeroent" type="text" required >
+                    <label for="tipo">TIPO DE ENTRADA</label>           
+                    <select name="tipo" id="tipo" > 
+                        <option value="8" selected>Normal 
+                        <option value="5" >Bono descuento 
+                    </select>                
+                    <label for="precio">PRECIO DE LAS ENTRADAS</label>  
+                    <input id="precio" name="precio" type="text" disabled>
+                </fieldset>
+                
+                <fieldset>
+                    <label for="total">TOTAL A PAGAR</label>            
+                    <input id="total" name="total" type="text" >
+                    <button type="button" >COMPRAR</button>
+                </fieldset>
+            </form>  
+        </div>               
+    </div>
+
+    <script src="js/zinema.js" type="text/javascript"></script>
+</body>
+
+</html>
