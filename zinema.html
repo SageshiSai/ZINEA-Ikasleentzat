@@ -76,6 +76,8 @@
                 Pellentesque ac pretium ex. Phasellus convallis ante urna, sed laoreet lacus imperdiet a. Nulla ac nibh
                 faucibus, tincidunt turpis vel, pretium elit.</p>
         </div>
+        <div id="textoSalaButaca" class="texto"></div>
+        <center><p id="butacas"></p></center>
     </div>
 
     <div id="compraentradas">
@@ -85,9 +87,9 @@
                 <fieldset>
                     <legend>COMPRA DE ENTRADAS PARA LA SESION</legend>
                     <label for="numentradas">NUMERO DE ENTRADAS</label> 
-                    <input id="numeroent" name="numeroent" type="text" required >
+                    <input id="numeroent" name="numeroent" type="text" required oninput="Calcular()">
                     <label for="tipo">TIPO DE ENTRADA</label>           
-                    <select name="tipo" id="tipo" > 
+                    <select name="tipo" id="tipo" oninput="Calcular()"> 
                         <option value="8" selected>Normal 
                         <option value="5" >Bono descuento 
                     </select>                
@@ -98,7 +100,7 @@
                 <fieldset>
                     <label for="total">TOTAL A PAGAR</label>            
                     <input id="total" name="total" type="text" >
-                    <button type="button" >COMPRAR</button>
+                    <button type="button" onclick="comprar()">COMPRAR</button>
                 </fieldset>
             </form>  
         </div>               

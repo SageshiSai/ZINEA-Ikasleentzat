@@ -1,6 +1,6 @@
 var TotalButacas =[100,150,75,50];
 var ButacasLibres=[100,150,75,50];
-numSala=0;
+numsala=0;
 
 document.getElementById("sal1").src="IMG/mechanic.jpg";
 document.getElementById("sal2").src="IMG/unmonstruo.jpg";
@@ -19,6 +19,27 @@ function verDatos(numsala) {
         }
     }
     elementos.style.display = "block";
+    document.getElementById("textoSalaButaca").textContent = "TOTAL BUTACAS "+TotalButacas[numsala-1]+" //Butacas Libres "+ButacasLibres[numsala-1];
+    document.getElementById("textoSalaButaca").style.display="block";
     document.getElementById("compraentradas").style.display="block";
 }
 
+function Calcular() {
+    var num = document.getElementById("numeroent").value;
+    var bono = document.getElementById("tipo").value;
+
+    var resultado = num * bono;
+    document.getElementById("precio").value = bono;
+    document.getElementById("total").value = resultado;
+    
+}
+
+function comprar() {
+    var index =  document.getElementById("numeroent").value;
+    if(ButacasLibres[numsala]>index){
+        ButacasLibres[numsala]= ButacasLibres[numsala]-index;
+        alert("Se han comprado las entradas correctamente | quedan un total de: "+ButacasLibres[index]);
+    } else {
+        alert("No hay suficionetes butacas");
+    }
+}

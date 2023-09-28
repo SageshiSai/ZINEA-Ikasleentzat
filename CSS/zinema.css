@@ -45,6 +45,9 @@ header h2{color:white;background-color:  #6190ca;text-align: center; }
     margin-left:10%;
     color:#000040 ;
 }
+#textoSalaButaca{
+    margin-top: 20px;
+}
 input, textarea, select, button,label {
     margin: 10px; box-sizing: border-box;display:block;float:left;}
 input{width : 50px;}
