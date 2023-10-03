@@ -1,17 +1,32 @@
 var TotalButacas = [100, 150, 75, 50];
 var ButacasLibres = [100, 150, 75, 50];
-
+var cartelera = [];
 numsala = 0;
 
 
-var pelis = document.querySelectorAll( ".pelis" );
-var pelisCartelera = [ "IMG/mechanic.jpg" , "IMG/unmonstruo.jpg" , "IMG/missperegrine.jpg" , "IMG/ozzy.jpg" ];
-var posiArray= 0;
+async function obtenerDatosJSON() {
 
-pelis.forEach( pelisid => {
-    pelisid.src = pelisCartelera[ posiArray ];
-    posiArray++;
+    try {
+
+        let response = await fetch( "../JSON/Cartelera.json" );
+
+        if( !response.ok ) {
+            throw new Error( "Error al obtener los datos" ); 
+        }
+
+        let data = await  response.json();
+        return data;
+
+    } catch ( error ) {
+        console.log( "Error al obtener los datos: ", error );
+    }
+}
+
+obtenerDatosJSON().then( data => {
+    cartelera = data;
 });
+
+
 
 
 const contenedorSalas = document.getElementById( "cartelera" );
@@ -21,9 +36,8 @@ contenedorSalas.addEventListener( "click", function( event ){
     if(event.target.classList.contains( "pelis" )) {
 
         const idPeliculas = event.target.id;
-        numsala = idPeliculas - 1;
-
         var elementos = document.getElementById( "sala" + idPeliculas);
+        numsala = idPeliculas - 1;
 
         for ( var i = 1; i <= 4; i++ ) {
             
@@ -53,6 +67,7 @@ function Calcular() {
     var nume = num.value;
     var bono = document.getElementById( "tipo" ).value;
     var resultado = nume * bono;
+
     document.getElementById( "precio" ).value = bono;
     document.getElementById( "total" ).value = resultado;
 }
