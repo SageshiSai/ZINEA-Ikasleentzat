@@ -22,14 +22,17 @@ async function obtenerDatosJSON() {
     }
 }
 
+const contenedorSalas = document.getElementById( "cartelera" );
+
 obtenerDatosJSON().then( data => {
     cartelera = data;
+
+    for ( let index = 0; index < 4; index++ ) {
+        console.log(cartelera[ index ].image);
+        document.getElementById( index+1 ).src = cartelera[ index ].image;
+    }
+    
 });
-
-
-
-
-const contenedorSalas = document.getElementById( "cartelera" );
 
 contenedorSalas.addEventListener( "click", function( event ){
 
@@ -47,9 +50,11 @@ contenedorSalas.addEventListener( "click", function( event ){
             if ( elemento ) {
                 elemento.style.display = "none";
             }
+            
         }
 
         elementos.style.display = "block";
+        elementos.querySelector("h3").textContent = cartelera[idPeliculas-1].nombre;
         document.getElementById( "textoSalaButaca" ).textContent = "TOTAL BUTACAS " + TotalButacas[ idPeliculas - 1 ] + " //Butacas Libres " + ButacasLibres[ idPeliculas - 1 ];
 
         document.getElementById( "textoSalaButaca" ).style.display = "block";
